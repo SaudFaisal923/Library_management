@@ -1,0 +1,33 @@
+{%include 'Book_store/base.html'%}
+
+{%block content%}
+<h1>hello</h1>
+
+<div class="">
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Book Name</th>
+      <th>author</th>
+      <th>publication</th>
+      <th>price</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for book in obj%}
+    <tr>
+      <td>{{book.book_name}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.publication}}</td>
+      <td>{{book.price}}</td>
+      <td>{{book.rating}}</td>
+      <td><a href="addtocart/{{book.id}}/">Add to Cart</a></td>
+      <td><a href="checkout/">Chech Out</a></td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+{%endblock%}
